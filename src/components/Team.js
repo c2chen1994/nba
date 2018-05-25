@@ -1,19 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 
-const Team = (team) => {
-  return (
-    <div className="text-center" style={{fontSize: 25}} >
-      <img src={team.teamLogo} alt={team.teamName} height="90"/>
-      <span>
-        {team.teamName}
-      </span>
-    </div>
-  );
-};
+class Team extends Component {
+  handleClick = () => {
+    console.log(this.props.teamName);
+  };
+  render() {
+    return (
+      <div className="text-center" style={{fontSize: 25}} onClick={this.handleClick} >
+        <img src={this.props.teamLogo} alt={this.props.teamName} height="90"/>
+        <span>
+          {this.props.teamName}
+        </span>
+      </div>
+    );
+  }
+}
+
 
 Team.propTypes = {
-  team: PropTypes.array
+  teamName: PropTypes.string,
+  teamLogo: PropTypes.string
 };
 
 Team.defaultProps = {

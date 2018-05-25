@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Header from './Header';
-import Team from './Team';
-import axios from 'axios';
+import ContestList from './ContestList';
 
 class App extends Component {
   // constructor(props) {
@@ -18,7 +17,7 @@ class App extends Component {
 
   componentDidMount() {
     //ajax, timers, listeners
-    
+
   }
 
   componentWillUnmount() {
@@ -27,15 +26,10 @@ class App extends Component {
   }
 
   render() {
-    debugger;
     return (
       <div>
         <Header message={this.state.pageHeader} />
-        <div>
-          {this.state.teams.map(team =>
-            <Team key={team.id} {...team} />
-          )}
-        </div>
+        <ContestList teams={this.state.teams} />
       </div>
     );
   }
