@@ -15,14 +15,12 @@ class App extends Component {
 
   componentDidMount() {
     //ajax, timers, listeners
-    console.log('did Mount');
-    debugger;
+
   }
 
   componentWillUnmount() {
     //clear timers, listeners
-    console.log('will Unmount');
-    debugger;
+
   }
 
   render() {
