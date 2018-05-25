@@ -8,9 +8,12 @@ import App from './src/components/App';
 const serverRender = () =>
   axios.get(`${config.serverUrl}/api/teams`)
     .then(resp => {
-      return ReactDOMSever.renderToString(
-        <App initialTeams={resp.data.teams} />
-      );
+      return {
+        initialMarkup: ReactDOMSever.renderToString(
+          <App initialTeams={resp.data.teams} />
+        ),
+        initialData: resp.data
+      };
     });
 
 export default serverRender;

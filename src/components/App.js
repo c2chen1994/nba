@@ -18,13 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     //ajax, timers, listeners
-    axios.get('/api/teams')
-      .then(resp => {
-        this.setState({
-          teams: resp.data.teams
-        });
-      })
-      .catch(console.error);
+    
   }
 
   componentWillUnmount() {
