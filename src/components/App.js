@@ -13,7 +13,7 @@ class App extends Component {
 
   state = {
     pageHeader : 'Naming Contests',
-    teams: []
+    teams: this.props.initialTeams
   };
 
   componentDidMount() {
@@ -33,6 +33,7 @@ class App extends Component {
   }
 
   render() {
+    debugger;
     return (
       <div>
         <Header message={this.state.pageHeader} />

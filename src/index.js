@@ -6,6 +6,6 @@ import App from './components/App';
 //window.React = React;
 
 render(
-  <App />,
+  <App initialTeams={[]} />,
   document.querySelector('#root')
 );
