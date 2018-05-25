@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import Team from './Team';
-import teamData from '../teamData';
+import axios from 'axios';
 
 class App extends Component {
   // constructor(props) {
@@ -18,9 +18,13 @@ class App extends Component {
 
   componentDidMount() {
     //ajax, timers, listeners
-    this.setState({
-      teams: teamData.teams
-    });
+    axios.get('/api/teams')
+      .then(resp => {
+        this.setState({
+          teams: resp.data.teams
+        });
+      })
+      .catch(console.error);
   }
 
   componentWillUnmount() {
