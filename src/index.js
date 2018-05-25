@@ -1,12 +1,26 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {PropTypes} from 'prop-types';
 
 //window.React = React;
-const num = Math.random();
-const color = num > 0.5 ? 'green' : 'red';
+
+const App = (props) => {
+  return (
+    <h2 className="text-center">
+      {props.headerMessage}
+    </h2>
+  );
+};
+
+App.propTypes = {
+  headerMessage: PropTypes.string.isRequired
+};
+
+App.defaultProps = {
+  headerMessage: 'Hello!'
+};
+
 render(
-  <h2 className="text-center" style={{color}}>
-    React with JSX!!! -- {num}
-  </h2>,
+  <App headerMessage="Hellp props!" />,
   document.querySelector('#root')
 );
