@@ -1,0 +1,38 @@
+{
+  "name": "nba",
+  "version": "1.0.0",
+  "description": "NBA data",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js --ignore public/",
+    "dev": "webpack -wd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c2chen1994/nba.git"
+  },
+  "author": "ZhuoChen (chen519@usc.edu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c2chen1994/nba/issues"
+  },
+  "homepage": "https://github.com/c2chen1994/nba#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0-beta4",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.2",
+    "nodemon": "^1.17.5",
+    "webpack": "^1.15.0"
+  }
+}
