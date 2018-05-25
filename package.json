@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/c2chen1994/nba#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongodb": "^3.1.0-beta4",
     "react": "^16.4.0",
