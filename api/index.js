@@ -14,4 +14,10 @@ router.get('/teams', (req, res) => {
   });
 });
 
+router.get('/teams/:contestId', (req, res) => {
+  let team = teams[req.params.contestId];
+  team.description = "it is a very great team";
+  res.send(team);
+});
+
 export default router;

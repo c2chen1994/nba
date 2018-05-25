@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import ContestList from './ContestList';
 import TeamDetail from './TeamDetail';
+import * as api from '../api';
 
 const pushState = (obj, url) =>
   window.history.pushState(obj, '', url);
@@ -34,10 +35,14 @@ class App extends Component {
        `/teams/${contestId}`
     );
 
-    this.setState({
-      pageHeader: this.state.teams[contestId].teamName,
-      currentContestId: contestId
+    api.fetchContest(contestId).then(team => {
+      this.setState({
+        pageHeader: team.teamName,
+        currentContestId: team.id
+      });
     });
+
+
   };
   currentContent() {
     if (this.state.currentContestId){
