@@ -3,24 +3,36 @@ import {render} from 'react-dom';
 import {PropTypes} from 'prop-types';
 
 //window.React = React;
-
-const App = (props) => {
+const Header = ({message}) => {
   return (
     <h2 className="text-center">
-      {props.headerMessage}
+      {message}
     </h2>
   );
 };
 
-App.propTypes = {
-  headerMessage: PropTypes.string.isRequired
+Header.propTypes = {
+  message: PropTypes.string.isRequired
 };
 
-App.defaultProps = {
-  headerMessage: 'Hello!'
+Header.defaultProps = {
+  message: 'Hello!'
 };
+
+const App = () => {
+  return (
+    <div>
+      <Header message="Naming Contests!" />
+      <div>
+        ...
+      </div>
+    </div>
+  );
+};
+
+
 
 render(
-  <App headerMessage="Hellp props!" />,
+  <App />,
   document.querySelector('#root')
 );
