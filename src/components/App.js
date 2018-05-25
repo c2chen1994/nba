@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import Team from './Team';
+import teamData from '../teamData';
+
 class App extends Component {
   // constructor(props) {
   //   super(props);
@@ -10,12 +12,15 @@ class App extends Component {
   // }
 
   state = {
-    pageHeader : 'Naming Contests'
+    pageHeader : 'Naming Contests',
+    teams: []
   };
 
   componentDidMount() {
     //ajax, timers, listeners
-
+    this.setState({
+      teams: teamData.teams
+    });
   }
 
   componentWillUnmount() {
@@ -28,8 +33,8 @@ class App extends Component {
       <div>
         <Header message={this.state.pageHeader} />
         <div>
-          {this.props.teams.map(team =>
-            <Team {...team} />
+          {this.state.teams.map(team =>
+            <Team key={team.id} {...team} />
           )}
         </div>
       </div>
