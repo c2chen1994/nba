@@ -13,11 +13,11 @@ module.exports = {
   },
   */
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: ["babel-loader"],
+        loader: "babel-loader",
         query: {
           presets: ["latest", "stage-0", "react"]
         }
