@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from './Header';
-
+import Team from './Team';
 class App extends Component {
   // constructor(props) {
   //   super(props);
@@ -28,7 +28,9 @@ class App extends Component {
       <div>
         <Header message={this.state.pageHeader} />
         <div>
-          ...
+          {this.props.teams.map(team =>
+            <Team {...team} />
+          )}
         </div>
       </div>
     );
