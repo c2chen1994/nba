@@ -3,7 +3,7 @@ import {PropTypes} from 'prop-types';
 
 class Team extends Component {
   handleClick = () => {
-    console.log(this.props.teamName);
+    this.props.onClick(this.props.id);
   };
   render() {
     return (
@@ -19,8 +19,10 @@ class Team extends Component {
 
 
 Team.propTypes = {
-  teamName: PropTypes.string,
-  teamLogo: PropTypes.string
+  id: PropTypes.number.isRequired,
+  teamName: PropTypes.string.isRequired,
+  teamLogo: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 Team.defaultProps = {
