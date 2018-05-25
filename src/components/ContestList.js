@@ -5,17 +5,17 @@ import {PropTypes} from 'prop-types';
 const ContestList = ({teams, onContestClick}) => {
   return (
     <div>
-      {teams.map(team =>
-        <Team key={team.id}
+      {Object.keys(teams).map(teamId =>
+        <Team key={teamId}
         onClick={onContestClick}
-        {...team} />
+        {...teams[teamId]} />
       )}
     </div>
   );
 };
 
 ContestList.propTypes = {
-  teams: PropTypes.array,
+  teams: PropTypes.object,
   onContestClick: PropTypes.func.isRequired
 };
 

@@ -3,27 +3,27 @@
     {
       "id": 1,
       "teamName": "Cleveland Cavaliers",
-      "teamLogo": "images/Cleveland_Cavaliers.jpg"
+      "teamLogo": "/images/Cleveland_Cavaliers.jpg"
     },
     {
       "id": 2,
       "teamName": "Golden State Warriors",
-      "teamLogo": "images/Golden_State_Warriors.jpg"
+      "teamLogo": "/images/Golden_State_Warriors.jpg"
     },
     {
       "id": 3,
       "teamName": "Houston Rockets",
-      "teamLogo": "images/Houston_Rockets.jpg"
+      "teamLogo": "/images/Houston_Rockets.jpg"
     },
     {
       "id": 4,
       "teamName": "Oklahoma City Thunder",
-      "teamLogo": "images/Oklahoma_City_Thunder.jpg"
+      "teamLogo": "/images/Oklahoma_City_Thunder.jpg"
     },
     {
       "id": 5,
       "teamName": "Los Angeles Lakers",
-      "teamLogo": "images/Los_Angeles_Lakers.jpg"
+      "teamLogo": "/images/Los_Angeles_Lakers.jpg"
     }
   ]
 }

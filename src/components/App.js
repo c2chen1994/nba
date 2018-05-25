@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import ContestList from './ContestList';
+import TeamDetail from './TeamDetail';
 
 const pushState = (obj, url) =>
   window.history.pushState(obj, '', url);
@@ -14,7 +15,7 @@ class App extends Component {
   // }
 
   state = {
-    pageHeader : 'Naming Contests',
+    pageHeader : 'All NBA Teams',
     teams: this.props.initialTeams
   };
 
@@ -32,14 +33,26 @@ class App extends Component {
       {currentContestId: contestId},
        `/teams/${contestId}`
     );
+
+    this.setState({
+      pageHeader: this.state.teams[contestId].teamName,
+      currentContestId: contestId
+    });
   };
+  currentContent() {
+    if (this.state.currentContestId){
+      return <TeamDetail {...this.state.teams[this.state.currentContestId]} />;
+    }
+    return <ContestList
+      onContestClick={this.fetchContest}
+      teams={this.state.teams} />;
+  }
   render() {
     return (
       <div>
         <Header message={this.state.pageHeader} />
-        <ContestList
-          onContestClick={this.fetchContest}
-          teams={this.state.teams} />
+        {this.currentContent()}
+
       </div>
     );
   }
