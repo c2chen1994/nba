@@ -22,6 +22,7 @@
     "express": "^4.16.3",
     "json-loader": "^0.5.7",
     "mongodb": "^3.1.0-beta4",
+    "node-sass-middleware": "^0.11.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
